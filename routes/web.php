@@ -14,7 +14,9 @@ use \Illuminate\Http\Request;
 |
 */
 Route::get('/request', function(Request $request){
-    dd($request);
+    //após o '->' há varios comandos ex.: fullurl, path, url, header...
+    $r = $request -> input(key:'keyword');
+    dd($r);
     return 'x';
 });
 
