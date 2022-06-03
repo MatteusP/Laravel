@@ -22,8 +22,18 @@ class BusinessController extends Controller
         $businessWhereFirst = Business::where('name', 'Franecki-Hartmann')->first();
 
         //mostrar na tela
-        dd($businesses, $business, $businessWhere, $businessWhereFirst);
+        //dd($businesses, $business, $businessWhere, $businessWhereFirst);
+
+
+        //aula 16
+        $business16 = Business::create([
+            'name' => 'Mateus Paiva',
+            'email' => 'mateus@gmail.com',
+            'address' => 'Meruoca'
+
+        ]);
+        dd($business16);
     }
-    //
+    
     //./vendor/bin/sail artisan make:model Business --migration --controller --factory
 }
