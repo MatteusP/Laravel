@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Models\User;
 use \Illuminate\Http\Request;
+use \App\Http\Controllers\BusinessController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,8 @@ Route::get('user/{user?}', function(User $user) {
     dd($user);
     return $user;
 });
+
+Route::get('businesses', [BusinessController::class, 'index']);
 
 
 /* Route::prefix('usuarios')->group(function() {
