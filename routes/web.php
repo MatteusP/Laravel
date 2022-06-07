@@ -28,7 +28,8 @@ Route::get('user/{user?}', function(User $user) {
 
 Route::get('businesses', [BusinessController::class, 'index']);
 
-
+Route::get('posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('posts/{post}', [PostController::class, 'show'])->name('posts.show');
 /* Route::prefix('usuarios')->group(function() {
     Route::get('', function() {
         return 'usuário';
