@@ -9,7 +9,7 @@ class BusinessController extends Controller
 {
     public function index(){
         //mostrar todos os dados
-        $businesses = Business::all();
+        /*$businesses = Business::all();
         //dd($businesses);
 
         //metodo para achar dado via id
@@ -26,20 +26,33 @@ class BusinessController extends Controller
 
 
         //aula 16
-        /*$business16 = Business::create([
+        $business16 = Business::create([
             'name' => 'Mateus Paiva',
             'email' => 'mateus@gmail.com',
             'address' => 'Meruoca'
 
-        ]); */
+        ]); 
         //dd($business16);
 
         //aula 18
         //deletar usuarios do banco de dados
         $business18 = Business::find(8);
         //$business18->delete();
-        dd($business18->toArray(), $business18->toSql());
+        dd($business18->toArray(), $business18->toSql());*/
+
+
+        //aula 22
+        return view('businesses');
+    }
+    public function store(Request $request){
+        $input = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'address' => 'string'
+        ]);
     }
     
-    //./vendor/bin/sail artisan make:model Business --migration --controller --factory
 }
+    
+    //./vendor/bin/sail artisan make:model Business --migration --controller --factory
+
