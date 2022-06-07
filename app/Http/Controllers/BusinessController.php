@@ -26,13 +26,19 @@ class BusinessController extends Controller
 
 
         //aula 16
-        $business16 = Business::create([
+        /*$business16 = Business::create([
             'name' => 'Mateus Paiva',
             'email' => 'mateus@gmail.com',
             'address' => 'Meruoca'
 
-        ]);
-        dd($business16);
+        ]); */
+        //dd($business16);
+
+        //aula 18
+        //deletar usuarios do banco de dados
+        $business18 = Business::find(8);
+        //$business18->delete();
+        dd($business18->toArray(), $business18->toSql());
     }
     
     //./vendor/bin/sail artisan make:model Business --migration --controller --factory
